@@ -1,0 +1,13 @@
+﻿@model Hff.MVC.Models.ViewModels.CategoryAddViewModel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Ekle</h2>
+<br />
+<form class="form-group" method="post">
+     <label>Kategori Adı</label>
+     @Html.TextBoxFor(p=>p.CategoryName,new { @class = "form-control" })
+    <button class="btn-outline-info">Kaydet</button>
+</form>

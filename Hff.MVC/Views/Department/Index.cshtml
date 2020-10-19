@@ -1,0 +1,30 @@
+﻿@model Hff.MVC.Models.ListViewModels.DepartmentListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Departmanlar Sayfası</h2>
+<br />
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Departman Id</th>
+        <th>Departman Adı</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model.Departments)
+    {
+      <tr>
+          <td>@item.DepartmentId</td>
+          <td>@item.DepartmentName</td>
+          <td>
+              <a href="/Department/Delete/@item.DepartmentId" class="btn btn-outline-danger">Sil</a>
+              <a href="/Department/Update/@item.DepartmentId" class="btn btn-outline-success">Güncelle</a>
+              <a href="/" class="btn btn-outline-info">Detay</a>
+          </td>
+      </tr>
+    }
+</table>
+<br />
+<a href="/Department/Add" class="btn btn-outline-primary">Departman Ekle</a>
+

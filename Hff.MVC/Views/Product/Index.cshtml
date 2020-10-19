@@ -1,0 +1,52 @@
+﻿@model List<Hff.MVC.Models.ListViewModels.ProductListViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ürünler</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Ürün Id</th>
+        <th>Ürün Adı</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Statü</th>
+        <th>Kategori Adı</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td>@item.TradeMark</td>
+            <td>@item.Stock</td>
+            <td>@item.PurchasePrice</td>
+            <td>@item.SalePrice</td>
+            <td>@item.Status</td>
+            <td>@item.Category.CategoryName</td>
+            <td>
+                <a href="/Product/Delete/@item.ProductId" class="btn btn-outline-danger">Sil</a>
+                <a href="/Product/Detail/@item.ProductId" class="btn btn-outline-success">Detay</a>
+                @if (item.Status == true)
+                {
+                    <a href="/Product/ChangeStatus/@item.ProductId" class="btn btn-outline-info">Pasifleştir</a>
+                }
+                else
+                {
+                    <a href="/Product/ChangeStatus/@item.ProductId" class="btn btn-outline-info">Aktifleştir</a>
+                }
+
+            </td>
+        </tr>
+    }
+
+    
+
+</table>
+<br />
+<a href="/Product/Add" class="btn btn-outline-primary">Ürün Ekle</a>

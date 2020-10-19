@@ -1,0 +1,13 @@
+﻿@model Hff.MVC.Models.ViewModels.DepartmentAddViewModel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Departman Ekleme Sayfası</h2>
+
+<form class="form-group" method="post">
+    @Html.TextBoxFor(p=>p.DepartmentName,new {@class="form-control" })
+    <br />
+    <button class="btn btn-outline-primary">Departman Ekle</button>
+</form>

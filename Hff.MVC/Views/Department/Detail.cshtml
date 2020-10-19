@@ -1,0 +1,26 @@
+﻿@model Hff.MVC.Models.ListViewModels.DepartmentWithEmployeesModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Çalışan Numarası</th>
+        <th>Çalışan Adı</th>
+        <th>Çalışan Soyadı</th>
+        <th>Çalışan Göreseli</th>
+    </tr>
+  @foreach (var item in Model.Employees)
+  {
+<tr>
+    <td>@item.EmployeeId</td>
+    <td>@item.EmployeeName</td>
+    <td>@item.EmployeeSurname</td>
+    <td>@item.Picture</td>
+</tr>
+  }
+</table>
+

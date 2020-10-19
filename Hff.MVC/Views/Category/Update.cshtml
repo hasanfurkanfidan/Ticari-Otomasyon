@@ -1,0 +1,17 @@
+﻿@model Hff.MVC.Models.ViewModels.CategoryViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategori Güncelleme Sayfası</h2>
+
+<form class="form-group" method="post"> 
+   @Html.HiddenFor(p=>p.CategoryId)
+    <br />
+    <label>Kategori Adı</label>
+    @Html.TextBoxFor(p=>p.CategoryName,new  {@class="form-control"})
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>
+

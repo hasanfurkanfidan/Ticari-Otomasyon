@@ -1,0 +1,14 @@
+﻿@model Hff.MVC.Models.ViewModels.DepartmentViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Update</h2>
+
+<form class="form-group" method="post">
+    @Html.TextBoxFor(p=>p.DepartmentName,new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(p=>p.DepartmentId)
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>

@@ -1,0 +1,32 @@
+﻿@model Hff.MVC.Models.ListViewModels.CategoryListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Kategoriler</h2>
+
+<table class="table table-bordered table-hover" style="margin-top:20px;margin-left:20px;margin-right:20px">
+    <tr>
+        <th>
+            Kategori Numarası
+        </th>
+        <th>
+            Kategori Adı
+        </th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model.Categories)
+    {
+        <tr>
+            <td>@item.CategoryId</td>
+            <td>@item.CategoryName</td>
+            <td><a href="/Category/Delete/@item.CategoryId" id="@item.CategoryId" class="btn btn-outline-danger">Sil</a></td>
+            <td><a href="/Category/Update/@item.CategoryId" class="btn btn-outline-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Category/Add" class="btn btn-outline-primary">Kategori Ekle</a>
+

@@ -1,0 +1,35 @@
+﻿@model Hff.MVC.Models.ListViewModels.ProductListViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Ürün Güncelleme Sayfası</h2>
+<form class="form-group" method="post">
+    @Html.HiddenFor(p => p.ProductId)
+    <label>Ürün Adı:</label>
+    @Html.TextBoxFor(p => p.ProductName, new { @class = "form-control" })
+    <br />
+    <label>Markası:</label>
+    @Html.TextBoxFor(p => p.TradeMark, new { @class = "form-control" })
+    <br />
+    <label>Kategori:</label>
+    @Html.DropDownListFor(p => p.CategoryId, (List<SelectListItem>)ViewBag.Items,"Kategori Seçiniz", new { @class = "form-control" })
+    <br />
+    <label>Stok Sayısı:</label>
+    @Html.TextBoxFor(p => p.Stock, new { @class = "form-control" })
+    <br />
+    <label>Alış Fiyatı:</label>
+    @Html.TextBoxFor(p => p.PurchasePrice, new { @class = "form-control" })
+    <br />
+    <label>Satış Fiyatı:</label>
+    @Html.TextBoxFor(p => p.SalePrice, new { @class = "form-control" })
+    <br />
+    <label>Statüler</label>
+    @Html.DropDownListFor(p => p.Status, new SelectList(ViewBag.Status, "Value", "Text"), "Statü Seçiniz", new { @class = "form-control" })
+    <br />
+    <label>Resim:</label>
+    @Html.TextBoxFor(p => p.Picture, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>
+
