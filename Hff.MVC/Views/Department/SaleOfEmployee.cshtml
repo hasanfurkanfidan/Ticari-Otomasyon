@@ -1,0 +1,33 @@
+﻿@model Hff.MVC.Models.ListViewModels.SaleOfEmployeeListViewModel
+@{
+    ViewBag.Title = "SaleOfEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div style="background-color:darkgray">
+    @Model.EmployeeName @Model.EmployeeSurname
+</div>
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Tarih</th>
+        <th>Adet</th>
+        <th>Fiyat</th>
+        <th>Toplam Tutar</th>
+        <th>Müşteri</th>
+        <th>Personel</th>
+        <th>Ürün</th>
+    </tr>
+    @foreach (var item in Model.SalesProcesses)
+    {
+<tr>
+    <td>@item.Date</td>
+    <td>@item.Quantity</td>
+    <td>@item.Price</td>
+    <td>@item.Total</td>
+    <td>@item.Customer.CustomerName @item.Customer.CustomerSurname</td>
+    <td>@item.Employee.EmployeeName @item.Employee.EmployeeSurname</td>
+    <td>@item.Product.ProductName</td>
+</tr>
+    }
+</table>

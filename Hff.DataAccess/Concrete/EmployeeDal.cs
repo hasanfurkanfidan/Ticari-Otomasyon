@@ -16,7 +16,7 @@ namespace Hff.DataAccess.Concrete
         {
             using (var context = new Context())
             {
-                return context.Employees.Include("Department").ToList();
+                return context.Employees.Include("Department").Where(filter).ToList();
             }
         }
     }

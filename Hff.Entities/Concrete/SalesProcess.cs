@@ -17,9 +17,12 @@ namespace Hff.Entities.Concrete
         public int Quantity { get; set; }
         public decimal Price { get; set; }
         public decimal Total { get; set; }
+        public int ProductId { get; set; }
         public Product Product { get; set; }
+        public int CustomerId { get; set; }
 
         public Customer Customer { get; set; }
+        public int EmployeeId  { get; set; }
 
         public Employee Employee { get; set; }
     }

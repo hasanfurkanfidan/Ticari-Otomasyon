@@ -39,6 +39,11 @@ namespace Hff.Business.Managers
             return AutoMapperHelper.MapToSameTypeList(_saleProcessDal.GetList(filter));
         }
 
+        public List<SalesProcess> GetSaleProcessesWithEverything(Expression<Func<SalesProcess, bool>> filter)
+        {
+            return _saleProcessDal.GetSaleProcessesWithEverything(filter);
+        }
+
         public SalesProcess Update(SalesProcess salesProcess)
         {
             return AutoMapperHelper.MapToSameType(_saleProcessDal.Update(salesProcess));

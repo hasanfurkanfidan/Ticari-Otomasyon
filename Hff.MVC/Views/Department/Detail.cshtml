@@ -5,13 +5,16 @@
 }
 
 <h2>Detail</h2>
-
+<div style="background-color:darkgray">
+    @Model.DepartmentName
+</div>
 <table class="table table-bordered table-hover">
     <tr>
         <th>Çalışan Numarası</th>
         <th>Çalışan Adı</th>
         <th>Çalışan Soyadı</th>
         <th>Çalışan Göreseli</th>
+        <th>Siparişler</th>
     </tr>
   @foreach (var item in Model.Employees)
   {
@@ -20,6 +23,7 @@
     <td>@item.EmployeeName</td>
     <td>@item.EmployeeSurname</td>
     <td>@item.Picture</td>
+    <td><a href="/Department/SaleOfEmployee/@item.EmployeeId" class="btn btn-outline-warning">Siparişler</a></td>
 </tr>
   }
 </table>

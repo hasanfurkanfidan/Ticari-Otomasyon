@@ -19,5 +19,7 @@ namespace Hff.Business.Abstract
         void Delete(int id);
 
         SalesProcess Update(SalesProcess salesProcess);
+
+        List<SalesProcess> GetSaleProcessesWithEverything(Expression<Func<SalesProcess, bool>> filter);
     }
 }

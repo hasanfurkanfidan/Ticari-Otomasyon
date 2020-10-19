@@ -81,6 +81,10 @@
     <Compile Include="Migrations\202010191655065_fixedempoyee.Designer.cs">
       <DependentUpon>202010191655065_fixedempoyee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010191820049_fixedsalesprocess.cs" />
+    <Compile Include="Migrations\202010191820049_fixedsalesprocess.Designer.cs">
+      <DependentUpon>202010191820049_fixedsalesprocess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -107,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010191655065_fixedempoyee.resx">
       <DependentUpon>202010191655065_fixedempoyee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010191820049_fixedsalesprocess.resx">
+      <DependentUpon>202010191820049_fixedsalesprocess.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

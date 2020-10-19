@@ -14,10 +14,12 @@ namespace Hff.MVC.Controllers
     {
         private readonly IDepartmentService _departmentService;
         private readonly IEmployeeService _employeeService;
-        public DepartmentController(IDepartmentService departmentService,IEmployeeService employeeService)
+        private readonly ISaleProcessService _saleProcessService;
+        public DepartmentController(IDepartmentService departmentService,IEmployeeService employeeService,ISaleProcessService saleProcessService)
         {
             _departmentService = departmentService;
             _employeeService = employeeService;
+            _saleProcessService = saleProcessService;
         }
         public ActionResult Index()
         {
@@ -65,12 +67,21 @@ namespace Hff.MVC.Controllers
         public ActionResult Detail(int id)
         {
             var department = _departmentService.GetById(id);
-           var employees =  _employeeService.GetEmployeesWithDepartment(p => p.DepartmentId == department.DepartmentId);
+            var employees =  _employeeService.GetEmployeesWithDepartment(p => p.DepartmentId == department.DepartmentId);
             var model = new DepartmentWithEmployeesModel();
             model.DepartmentName = department.DepartmentName;
             model.Employees = employees;
             return View(model);
 
+        }
+        public ActionResult SaleOfEmployee(int id)
+        {
+            var employee = _employeeService.GetById(id);
+            var model = new SaleOfEmployeeListViewModel();
+            model.EmployeeName = employee.EmployeeName;
+            model.EmployeeSurname = employee.EmployeeSurname;
+            model.SalesProcesses = _saleProcessService.GetSaleProcessesWithEverything(p => p.EmployeeId == employee.EmployeeId);
+            return View(model);
         }
     }
 }
