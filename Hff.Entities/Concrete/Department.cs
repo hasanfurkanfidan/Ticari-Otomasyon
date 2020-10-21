@@ -15,6 +15,8 @@ namespace Hff.Entities.Concrete
 
         public string DepartmentName { get; set; }
 
+        public bool State { get; set; }
+
         public ICollection<Employee> Employees { get; set; }
     }
 }

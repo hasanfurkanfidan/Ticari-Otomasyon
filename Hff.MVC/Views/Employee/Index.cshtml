@@ -1,0 +1,60 @@
+﻿@model Hff.MVC.Models.ListViewModels.EmployeeListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Personeller</h2>
+
+<table id="tblEmployee" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Çalışan Adı</th>
+            <th>Çalışan SoyAdı</th>
+            <th>Çalışan Görseli</th>
+            <th>Çalışan Departmanı</th>
+            <th>İşlemler</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Employees)
+        {
+
+            <tr>
+                <td>@item.EmployeeName</td>
+                <td>@item.EmployeeSurname</td>
+                <td>@item.Picture</td>
+                <td>@item.Department.DepartmentName</td>
+                <td>
+                    <a href="/" class="btn btn-outline-danger">Sil</a>
+                    <a href="/" class="btn btn-outline-success">Güncelle</a>
+                </td>
+                <td><a href="/" class="btn btn-outline-warning">Satış Geçmişi</a></td>
+            </tr>
+
+
+        }
+    </tbody>
+</table>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="~/Content/bootstrap.css" rel=" stylesheet" />
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js"></script>
+
+
+
+<script>
+
+    $('#tblEmployee').dataTable({});
+
+</script>

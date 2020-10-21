@@ -20,6 +20,7 @@ namespace Hff.Entities.Concrete
         public string Picture { get; set; }
         public int DepartmentId { get; set; }
 
+        public bool State { get; set; }
         public ICollection< SalesProcess> SalesProcesses { get; set; }
 
         public Department Department { get; set; }
