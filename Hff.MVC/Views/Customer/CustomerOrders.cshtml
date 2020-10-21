@@ -1,0 +1,34 @@
+﻿@model Hff.MVC.Models.ListViewModels.CustomerOrdersLisViewModel
+@{
+    ViewBag.Title = "CustomerOrders";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>CustomerOrders</h2>
+<div style="background-color:darkslategrey">
+   @foreach (var item in Model.SalesProcesses)
+   {
+       <p>Cari: @item.Customer.CustomerName  @item.Customer.CustomerSurname</p>
+   }
+</div>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Date</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Product</th>
+        <th>Employee</th>
+    </tr>
+    @foreach (var item in Model.SalesProcesses)
+    {
+        <tr>
+            <td>@item.Date</td>
+            <td>@item.Quantity</td>
+            <td>@item.Price</td>
+            <td>@item.Total</td>
+            <td>@item.Product.ProductName</td>
+            <td>@item.Employee.EmployeeName @item.Employee.EmployeeSurname</td>
+        </tr>
+    }
+</table>

@@ -19,6 +19,8 @@ namespace Hff.Entities.Concrete
 
         public string CustomerMail { get; set; }
 
+        public bool State { get; set; }
+
         public ICollection< SalesProcess> SalesProcesses { get; set; }
 
     }

@@ -12,6 +12,7 @@
         <th>Cari Soyad</th>
         <th>Cari Mail</th>
         <th>İşlemler</th>
+        <th>Detaylar</th>
     </tr>
     @foreach (var item in Model.Customers)
     {
@@ -21,9 +22,11 @@
             <td>@item.CustomerSurname</td>
             <td>@item.CustomerMail</td>
             <td>
-                <a href="/" class="btn btn-danger">Sil</a>
+                <a href="/Customer/Delete/@item.CustomerId" class="btn btn-danger">Sil</a>
                 <a href="/Customer/Detail/@item.CustomerId" class="btn btn-success">Güncelle</a>
+               
             </td>
+            <td> <a href="/Customer/CustomerOrders/@item.CustomerId" class="btn btn-warning">Sipariş Geçmişi</a></td>
         </tr>
     }
 </table>

@@ -4,6 +4,7 @@ using Hff.MVC.Models.ViewModels;
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,15 +14,17 @@ namespace Hff.MVC.Controllers
     public class CustomerController : Controller
     {
         private readonly ICustomerService _customerService;
-        public CustomerController(ICustomerService customerService)
+        private readonly ISaleProcessService _saleService;
+        public CustomerController(ICustomerService customerService,ISaleProcessService saleService)
         {
+            _saleService = saleService;
             _customerService = customerService;
         }
         // GET: Customer
         public ActionResult Index()
         {
             CustomerListViewModel model = new CustomerListViewModel();
-            model.Customers = _customerService.GetList();
+            model.Customers = _customerService.GetList(p=>p.State==true);
             return View(model);
         }
         public ActionResult Add()
@@ -32,7 +35,7 @@ namespace Hff.MVC.Controllers
         [HttpPost]
         public ActionResult Add(CustomerAddViewModel model)
         {
-           var customer =  _customerService.Create(new Entities.Concrete.Customer { CustomerName = model.CustomerName, CustomerSurname = model.CustomerSurname, CustomerMail = model.CustomerMail });
+           var customer =  _customerService.Create(new Entities.Concrete.Customer { CustomerName = model.CustomerName, CustomerSurname = model.CustomerSurname, CustomerMail = model.CustomerMail,State = true });
             return View();
             
         }
@@ -59,8 +62,17 @@ namespace Hff.MVC.Controllers
         }
         public ActionResult Delete(int id)
         {
-            _customerService.Delete(id);
+           var customer =  _customerService.GetById(id);
+            customer.State = false;
+            _customerService.Update(customer);
             return RedirectToAction("Index");
+        }
+        public ActionResult CustomerOrders(int id)
+        {
+            var model = new CustomerOrdersLisViewModel();
+            model.CustomerId = id;
+            model.SalesProcesses = _saleService.GetSaleProcessesWithEverything(p => p.CustomerId == id);
+            return View(model);
         }
     }
 }

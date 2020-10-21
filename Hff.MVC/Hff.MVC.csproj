@@ -139,6 +139,7 @@
     </Compile>
     <Compile Include="Models\ListViewModels\CategoryListViewModel.cs" />
     <Compile Include="Models\ListViewModels\CustomerListViewModel.cs" />
+    <Compile Include="Models\ListViewModels\CustomerOrdersLisViewModel.cs" />
     <Compile Include="Models\ListViewModels\DepartmentListViewModel.cs" />
     <Compile Include="Models\ListViewModels\DepartmentWithEmployeesModel.cs" />
     <Compile Include="Models\ListViewModels\ProductListViewModel.cs" />
@@ -287,6 +288,7 @@
     <Content Include="Views\Customer\Add.cshtml" />
     <Content Include="Views\Customer\Empty.cshtml" />
     <Content Include="Views\Customer\Detail.cshtml" />
+    <Content Include="Views\Customer\CustomerOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
