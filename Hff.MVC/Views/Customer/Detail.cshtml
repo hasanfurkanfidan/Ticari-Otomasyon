@@ -1,0 +1,20 @@
+﻿@model Hff.MVC.Models.ViewModels.CustomerViewModel
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Detail</h2>
+
+<form class="form-group" method="post">
+    <label>Cari Adı</label>
+    @Html.TextBoxFor(p=>p.CustomerName,new { @class="form-control"})
+    <label>Cari Soyadı</label>
+    @Html.TextBoxFor(p=>p.CustomerSurname,new  {@class="form-control" })
+    <label>
+        Cari Mail
+    </label>
+    @Html.TextBoxFor(p=>p.CustomerMail,new {@class="form-control" })
+    @Html.HiddenFor(p=>p.CustomerId)
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>

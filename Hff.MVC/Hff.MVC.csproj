@@ -130,6 +130,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -137,12 +138,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ListViewModels\CategoryListViewModel.cs" />
+    <Compile Include="Models\ListViewModels\CustomerListViewModel.cs" />
     <Compile Include="Models\ListViewModels\DepartmentListViewModel.cs" />
     <Compile Include="Models\ListViewModels\DepartmentWithEmployeesModel.cs" />
     <Compile Include="Models\ListViewModels\ProductListViewModel.cs" />
     <Compile Include="Models\ListViewModels\SaleOfEmployeeListViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryAddViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
+    <Compile Include="Models\ViewModels\CustomerAddViewModel.cs" />
+    <Compile Include="Models\ViewModels\CustomerViewModel.cs" />
     <Compile Include="Models\ViewModels\DepartmentAddViewModel.cs" />
     <Compile Include="Models\ViewModels\DepartmentViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductAddViewModel.cs" />
@@ -279,6 +283,10 @@
     <Content Include="Views\Department\Update.cshtml" />
     <Content Include="Views\Department\Detail.cshtml" />
     <Content Include="Views\Department\SaleOfEmployee.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Add.cshtml" />
+    <Content Include="Views\Customer\Empty.cshtml" />
+    <Content Include="Views\Customer\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

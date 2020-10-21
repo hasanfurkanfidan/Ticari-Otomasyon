@@ -1,0 +1,20 @@
+﻿@model Hff.MVC.Models.ViewModels.CustomerAddViewModel
+@{
+    ViewBag.Title = "Add";
+    Layout = null;
+
+}
+
+<form  method="post">
+    <label>Cari Adı</label>
+    @Html.TextBoxFor(p=>p.CustomerName,new  {@class="form-control" })
+    <br />
+    <label>Cari Soyadı</label>
+    @Html.TextBoxFor(p=>p.CustomerSurname,new  {@class="form-control" })
+    <br />
+    <label>Cari Mail</label>
+    @Html.TextBoxFor(p => p.CustomerMail, new { @class="form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Ekle</button>
+</form>
+

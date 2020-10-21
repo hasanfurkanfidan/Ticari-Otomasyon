@@ -1,0 +1,52 @@
+﻿@model Hff.MVC.Models.ListViewModels.CustomerListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Cari Id</th>
+        <th>Cari Ad</th>
+        <th>Cari Soyad</th>
+        <th>Cari Mail</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model.Customers)
+    {
+        <tr>
+            <td>@item.CustomerId</td>
+            <td>@item.CustomerName</td>
+            <td>@item.CustomerSurname</td>
+            <td>@item.CustomerMail</td>
+            <td>
+                <a href="/" class="btn btn-danger">Sil</a>
+                <a href="/Customer/Detail/@item.CustomerId" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+    Cari Ekle
+</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+               @Html.Action("Add")
+            </div>
+    
+        </div>
+    </div>
+</div>
+
+
