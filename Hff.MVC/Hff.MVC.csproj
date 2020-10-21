@@ -146,12 +146,15 @@
     <Compile Include="Models\ListViewModels\EmployeeListViewModel.cs" />
     <Compile Include="Models\ListViewModels\ProductListViewModel.cs" />
     <Compile Include="Models\ListViewModels\SaleOfEmployeeListViewModel.cs" />
+    <Compile Include="Models\ListViewModels\SalesOfEmployeeListViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryAddViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
     <Compile Include="Models\ViewModels\CustomerAddViewModel.cs" />
     <Compile Include="Models\ViewModels\CustomerViewModel.cs" />
     <Compile Include="Models\ViewModels\DepartmentAddViewModel.cs" />
     <Compile Include="Models\ViewModels\DepartmentViewModel.cs" />
+    <Compile Include="Models\ViewModels\EmployeeAddViewModel.cs" />
+    <Compile Include="Models\ViewModels\EmployeeViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductAddViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -528,6 +531,9 @@
     <Content Include="Views\Customer\Detail.cshtml" />
     <Content Include="Views\Customer\CustomerOrders.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\Add.cshtml" />
+    <Content Include="Views\Employee\Detail.cshtml" />
+    <Content Include="Views\Employee\SalesOfEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

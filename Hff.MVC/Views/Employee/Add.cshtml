@@ -1,0 +1,23 @@
+﻿@model Hff.MVC.Models.ViewModels.EmployeeAddViewModel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Add</h2>
+
+<form class="form-group" method="post">
+    <label>Personel Adı</label>
+    @Html.TextBoxFor(p=>p.EmployeeName,new {@class = "form-control" })
+    <br />
+    <label>Personel Soyadı</label>
+    @Html.TextBoxFor(p=>p.EmployeeSurname,new  {@class="form-control" })
+    <br />
+    <label>Personel Resmi</label>
+    @Html.TextBoxFor(p=>p.Picture,new  {@class="form-control" })
+    <br />
+    <label>Personel Departmanı</label>
+    @Html.DropDownListFor(p=>p.DepartmentId,(List<SelectListItem>)ViewBag.Departments,new { @class="form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Ekle</button>
+</form>
