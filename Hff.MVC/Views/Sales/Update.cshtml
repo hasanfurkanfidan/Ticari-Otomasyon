@@ -1,0 +1,24 @@
+﻿@model Hff.MVC.Models.ViewModels.SaleViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Update</h2>
+
+<form class="form-group" method="post">
+    <label>Cari</label>
+    @Html.DropDownListFor(p => p.CustomerId, (List<SelectListItem>)ViewBag.Customers, new { @class = "form-control" })
+    <br />
+    <br />
+    <label>Fiyat</label>
+    @Html.TextBoxFor(p => p.Price, new { @class = "form-control" })
+    <br />
+    <label>Toplam Tutar</label>
+    @Html.TextBoxFor(p => p.Total, new { @class = "form-control" })
+
+    @Html.HiddenFor(p=>p.Id)
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>
+
+

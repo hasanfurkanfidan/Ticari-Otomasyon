@@ -88,5 +88,59 @@ namespace Hff.MVC.Controllers
             
            
         }
+        public ActionResult Update(int id)
+        {
+            var sale = _saleProcessService.GetById(id);
+            var customers = (from customer in _customerService.GetList()
+                             select new SelectListItem
+                             {
+                                 Text = customer.CustomerName + " " + customer.CustomerSurname,
+                                 Value = customer.CustomerId.ToString()
+                             }
+                           ).ToList();
+            ViewBag.Customers = customers;
+            var model = new SaleViewModel();
+            model.Id = id;
+            model.Price = sale.Price;
+            model.Total = sale.Total;
+            model.Quantity = sale.Quantity;
+            model.ProductId = sale.ProductId;
+            model.CustomerId = sale.CustomerId;
+            model.Date = sale.Date;
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Update(SaleViewModel model)
+        {
+
+            var sale = _saleProcessService.GetById(model.Id);
+            sale.Price = model.Price;
+            sale.Total = model.Total;
+            sale.CustomerId = model.CustomerId;
+            _saleProcessService.Update(sale);
+            return RedirectToAction("Index");
+        }
+        public ActionResult Detail(int id)
+        {
+            var model = new SaleProcessListViewModel();
+            var sale = _saleProcessService.GetById(id);
+            var sales = _saleProcessService.GetSaleProcessesWithEverything(p => p.SaleId == sale.SaleId);
+            model.SalesProcesses = sales;
+            return View(model);
+        }
+        public ActionResult DetailTOPdf(int id)
+        {
+            var model = new SaleProcessListViewModel();
+            var sale = _saleProcessService.GetById(id);
+            var sales = _saleProcessService.GetSaleProcessesWithEverything(p => p.SaleId == sale.SaleId);
+            model.SalesProcesses = sales;
+            return View(model);
+        }
+        public ActionResult PdfToIndex()
+        {
+            var model = new SaleProcessListViewModel();
+            model.SalesProcesses = _saleProcessService.GetSaleProcessesWithEverything(null);
+            return View(model);
+        }
     }
 }

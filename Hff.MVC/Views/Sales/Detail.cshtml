@@ -12,7 +12,7 @@
         <th>Personel</th>
         <th>Fiyat</th>
         <th>Toplam</th>
-        <th>İşlemler</th>
+        <th>Yazdır</th>
     </tr>
     @foreach (var item in Model.SalesProcesses)
     {
@@ -24,11 +24,10 @@
             <td>@item.Price</td>
             <td>@item.Total</td>
             <td>
-            <a href="/Sales/Update/@item.SaleId" class="btn btn-success">Güncelle</a>
-            <a href="/Sales/Detail/@item.SaleId" class="btn btn-info">Detaylar</a>
+                <a href="/Sales/DetailTOPdf/@item.SaleId" class="btn btn-info">Yazdır</a>
             </td>
         </tr>
     }
 </table>
 <br />
-<a href="/Sales/ToSell" class="btn btn-outline-primary">Satış Yap</a> <a href="/Sales/PdfToIndex" class="btn btn-link">Yazdır</a>
+<a href="/Sales/ToSell" class="btn btn-outline-primary">Satış Yap</a>
