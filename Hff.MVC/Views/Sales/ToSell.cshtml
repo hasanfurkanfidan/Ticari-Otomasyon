@@ -1,0 +1,31 @@
+﻿@model Hff.MVC.Models.ViewModels.SalesAddViewModel
+@{
+    ViewBag.Title = "ToSell";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Satış Yapma Ekranı</h2>
+
+<form class="form-group" method="post">
+    <label>Ürün</label>
+    @Html.DropDownListFor(p => p.ProductId, (List<SelectListItem>)ViewBag.Products, new { @class = "form-control" })
+    <br />
+    <label>Cari</label>
+    @Html.DropDownListFor(p => p.CustomerId, (List<SelectListItem>)ViewBag.Customers, new { @class = "form-control" })
+    <br />
+    <label>Personel</label>
+    @Html.DropDownListFor(p => p.EmployeeId, (List<SelectListItem>)ViewBag.Employees, new { @class = "form-control" })
+    <br />
+    <label>Fiyat</label>
+    @Html.TextBoxFor(p => p.Price, new { @class = "form-control" })
+    <br />
+    <label>Toplam Tutar</label>
+    @Html.TextBoxFor(p => p.Total, new { @class = "form-control" })
+    <label>Miktar</label>
+    <br />
+    @Html.TextBoxFor(p => p.Quantity, new { @class="form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Satış Yap</button>
+</form>
+
+

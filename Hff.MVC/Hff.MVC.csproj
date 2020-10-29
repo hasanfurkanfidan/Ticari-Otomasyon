@@ -135,6 +135,7 @@
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SalesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -146,6 +147,7 @@
     <Compile Include="Models\ListViewModels\EmployeeListViewModel.cs" />
     <Compile Include="Models\ListViewModels\ProductListViewModel.cs" />
     <Compile Include="Models\ListViewModels\SaleOfEmployeeListViewModel.cs" />
+    <Compile Include="Models\ListViewModels\SaleProcessListViewModel.cs" />
     <Compile Include="Models\ListViewModels\SalesOfEmployeeListViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryAddViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
@@ -156,6 +158,7 @@
     <Compile Include="Models\ViewModels\EmployeeAddViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeeViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductAddViewModel.cs" />
+    <Compile Include="Models\ViewModels\SalesAddViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -534,6 +537,8 @@
     <Content Include="Views\Employee\Add.cshtml" />
     <Content Include="Views\Employee\Detail.cshtml" />
     <Content Include="Views\Employee\SalesOfEmployee.cshtml" />
+    <Content Include="Views\Sales\Index.cshtml" />
+    <Content Include="Views\Sales\ToSell.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

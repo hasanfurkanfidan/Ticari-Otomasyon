@@ -36,7 +36,7 @@ namespace Hff.Business.Managers
 
         public List<Product> GetList(Expression<Func<Product, bool>> filter = null)
         {
-            return AutoMapperHelper.MapToSameTypeList(_productDal.GetList(filter));
+            return _productDal.GetList(filter);
         }
 
         public List<Product> GetWithCategories()

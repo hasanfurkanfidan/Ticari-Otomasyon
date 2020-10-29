@@ -41,7 +41,7 @@ namespace Hff.Business.Managers
 
         public List<Employee> GetList(Expression<Func<Employee, bool>> filter = null)
         {
-            return AutoMapperHelper.MapToSameTypeList(_employeeDal.GetList(filter));
+            return _employeeDal.GetList(filter);
         }
 
         public Employee Update(Employee employee)

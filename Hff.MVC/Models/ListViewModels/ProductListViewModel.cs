@@ -11,7 +11,7 @@ namespace Hff.MVC.Models.ListViewModels
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string TradeMark { get; set; }
-        public short Stock { get; set; }
+        public int Stock { get; set; }
 
         public int CategoryId { get; set; }
         public decimal PurchasePrice { get; set; }

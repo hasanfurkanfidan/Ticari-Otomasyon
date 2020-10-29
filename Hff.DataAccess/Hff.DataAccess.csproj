@@ -93,6 +93,10 @@
     <Compile Include="Migrations\202010211445108_addingstatecoumnonemployee.Designer.cs">
       <DependentUpon>202010211445108_addingstatecoumnonemployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010290000460_UpdatedProduct.cs" />
+    <Compile Include="Migrations\202010290000460_UpdatedProduct.Designer.cs">
+      <DependentUpon>202010290000460_UpdatedProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010211445108_addingstatecoumnonemployee.resx">
       <DependentUpon>202010211445108_addingstatecoumnonemployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010290000460_UpdatedProduct.resx">
+      <DependentUpon>202010290000460_UpdatedProduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

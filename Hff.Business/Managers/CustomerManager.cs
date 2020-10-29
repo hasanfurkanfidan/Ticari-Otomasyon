@@ -36,7 +36,7 @@ namespace Hff.Business.Managers
 
         public List<Customer> GetList(Expression<Func<Customer, bool>> filter = null)
         {
-            return AutoMapperHelper.MapToSameTypeList(_customerDal.GetList(filter));
+            return _customerDal.GetList(filter);
         }
 
         public Customer Update(Customer customer)

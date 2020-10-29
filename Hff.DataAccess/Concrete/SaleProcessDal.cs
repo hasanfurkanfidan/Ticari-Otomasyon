@@ -14,9 +14,18 @@ namespace Hff.DataAccess.Concrete
     {
         public List<SalesProcess> GetSaleProcessesWithEverything(Expression<Func<SalesProcess, bool>> filter)
         {
+          
             using (var context = new Context())
             {
-                return context.SalesProcesses.Include("Customer").Include("Employee").Include("Customer").Include("Product").Where(filter).ToList();
+                if (filter == null) {
+                    return context.SalesProcesses.Include("Customer").Include("Employee").Include("Customer").Include("Product").ToList();
+                }
+                else
+                {
+                    return context.SalesProcesses.Include("Customer").Include("Employee").Include("Customer").Include("Product").Where(filter).ToList();
+
+                }
+
             }
         }
     }

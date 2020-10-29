@@ -14,7 +14,7 @@ namespace Hff.Entities.Concrete
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public string TradeMark { get; set; }
-        public short Stock { get; set; }
+        public int Stock { get; set; }
         public decimal PurchasePrice { get; set; }
         public decimal SalePrice { get; set; }
         public string Picture { get; set; }

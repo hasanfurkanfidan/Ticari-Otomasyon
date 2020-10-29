@@ -1,0 +1,92 @@
+﻿using Hff.Business.Abstract;
+using Hff.Entities.Concrete;
+using Hff.MVC.Models.ListViewModels;
+using Hff.MVC.Models.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Web;
+using System.Web.Mvc;
+
+namespace Hff.MVC.Controllers
+{
+    public class SalesController : Controller
+    {
+        private ISaleProcessService _saleProcessService;
+        private ICustomerService _customerService;
+        private IEmployeeService _employeeService;
+        private IProductService _productService;
+        public SalesController(ISaleProcessService saleProcessService, IEmployeeService employeeService, ICustomerService customerService, IProductService productService)
+        {
+            _saleProcessService = saleProcessService;
+            _customerService = customerService;
+            _employeeService = employeeService;
+            _productService = productService;
+        }
+        public ActionResult Index()
+        {
+            var model = new SaleProcessListViewModel();
+            model.SalesProcesses = _saleProcessService.GetSaleProcessesWithEverything(null);
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult ToSell()
+        {
+            var customers = (from customer in _customerService.GetList()
+                             select new SelectListItem
+                             {
+                                 Text = customer.CustomerName + " " + customer.CustomerSurname,
+                                 Value = customer.CustomerId.ToString()
+                             }
+                             ).ToList();
+            var employees = (from employee in _employeeService.GetList()
+                             select new SelectListItem
+                             {
+                                 Text = employee.EmployeeName + " " + employee.EmployeeSurname,
+                                 Value = employee.EmployeeId.ToString()
+                             }).ToList();
+            var products = (from product in _productService.GetList()
+                            select new SelectListItem
+                            {
+                                Text = product.ProductName,
+                                Value = product.ProductId.ToString()
+                            }).ToList();
+            ViewBag.Customers = customers;
+            ViewBag.Employees = employees;
+            ViewBag.Products = products;
+
+            return View();
+        }
+
+        public ActionResult ToSell(SalesAddViewModel model) {
+            var product = _productService.GetById(model.ProductId);
+            if (product.Stock>model.Quantity)
+            {
+                _saleProcessService.Create(new SalesProcess
+                {
+                    ProductId = model.ProductId,
+                    Quantity = model.Quantity,
+                    CustomerId = model.CustomerId,
+                    EmployeeId = model.EmployeeId,
+                    Total = model.Total,
+                    Price = model.Price,
+                    Date = Convert.ToDateTime(DateTime.Now.ToShortDateString())
+                });
+                short quantity = Convert.ToInt16(model.Quantity);
+
+                product.Stock = product.Stock - quantity;
+
+                _productService.Update(product);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+
+            
+           
+        }
+    }
+}
