@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListViewModels\BillListViewModel.cs" />
     <Compile Include="Models\ListViewModels\CategoryListViewModel.cs" />
     <Compile Include="Models\ListViewModels\CustomerListViewModel.cs" />
     <Compile Include="Models\ListViewModels\CustomerOrdersLisViewModel.cs" />
@@ -149,6 +151,9 @@
     <Compile Include="Models\ListViewModels\SaleOfEmployeeListViewModel.cs" />
     <Compile Include="Models\ListViewModels\SaleProcessListViewModel.cs" />
     <Compile Include="Models\ListViewModels\SalesOfEmployeeListViewModel.cs" />
+    <Compile Include="Models\ViewModels\BillLineAddViewModel.cs" />
+    <Compile Include="Models\ViewModels\BillAddViewModel.cs" />
+    <Compile Include="Models\ViewModels\BillWithBillLineViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryAddViewModel.cs" />
     <Compile Include="Models\ViewModels\CategoryViewModel.cs" />
     <Compile Include="Models\ViewModels\CustomerAddViewModel.cs" />
@@ -469,7 +474,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -544,6 +548,11 @@
     <Content Include="Views\Sales\Detail.cshtml" />
     <Content Include="Views\Sales\DetailTOPdf.cshtml" />
     <Content Include="Views\Sales\PdfToIndex.cshtml" />
+    <Content Include="Views\Bill\Index.cshtml" />
+    <Content Include="Views\Bill\BillView.cshtml" />
+    <Content Include="Views\Bill\Add.cshtml" />
+    <Content Include="Views\Bill\Update.cshtml" />
+    <Content Include="Views\Bill\AddBillLine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

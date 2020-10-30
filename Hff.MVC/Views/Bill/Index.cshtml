@@ -1,0 +1,42 @@
+﻿@model Hff.MVC.Models.ListViewModels.BillListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Fatura Listeleme Sayfası</h2>
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>Fatura Id</th>
+        <th>Seri Numarası</th>
+        <th>Sıra Numarası</th>
+        <th>Tarih</th>
+        <th>Vergi Dairesi</th>
+        <th>Saat</th>
+        <th>Teslim Eden</th>
+        <th>Teslim Alan</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model.Bills)
+    {
+        <tr>
+            <td>@item.BillId</td>
+            <td>@item.SerialNumber</td>
+            <td>@item.RowNumber</td>
+            <td>@item.Date</td>
+            <td>@item.TaxAdministration</td>
+            <td>@item.Hour</td>
+            <td>@item.Deliverer</td>
+            <td>@item.Receiver</td>
+            <td>
+                <a href="/Bill/Update/@item.BillId" class="btn btn-sm btn-success">Güncelle</a>
+                <a href="/Bill/BillView/@item.BillId" class="btn btn-sm btn-info">Fatura Görünümü</a>
+                <a href="/Bill/AddBillLine/@item.BillId" class="btn btn-sm btn-danger">Fatura Kalem Ekle</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<a href="/Bill/Add" class="btn btn-primary">Fatura Ekle</a>

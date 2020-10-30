@@ -10,5 +10,6 @@ namespace Hff.DataAccess.Abstract
 {
    public interface IBillDal:IEntityRepository<Bill>
     {
+        Bill GetWithBillLine(int id);
     }
 }

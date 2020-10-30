@@ -19,5 +19,7 @@ namespace Hff.Business.Abstract
         void Delete(int id);
 
         Bill Update(Bill bill);
+
+        Bill GetWithBillLine(int id);
     }
 }

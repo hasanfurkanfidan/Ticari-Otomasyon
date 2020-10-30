@@ -1,0 +1,29 @@
+﻿@model Hff.MVC.Models.ViewModels.BillLineAddViewModel
+
+@{
+    ViewBag.Title = "AddBillLine";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+   
+}
+
+<h2>AddBillLine</h2>
+
+
+<form class="form-group" method="post">
+
+    <label>Açıklama</label>
+    @Html.TextBoxFor(p => p.Description, new { @class = "form-control" })
+    <br />
+    <label>Miktar</label>
+    @Html.TextBoxFor(p => p.Quantity, new { @class = "form-control" })
+    <br />
+    <label>Birim Fiyat</label>
+    @Html.TextBoxFor(p => p.UnitPrice, new { @class = "form-control" })
+    <br />
+    <label>Fiyat</label>
+    @Html.TextBoxFor(p => p.Price, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(p => p.BillId)
+    <button class="btn btn-primary">Fatura Kalem Ekle</button>
+</form>
+

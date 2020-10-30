@@ -97,6 +97,18 @@
     <Compile Include="Migrations\202010290000460_UpdatedProduct.Designer.cs">
       <DependentUpon>202010290000460_UpdatedProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010291610302_UpdatedBillLine.cs" />
+    <Compile Include="Migrations\202010291610302_UpdatedBillLine.Designer.cs">
+      <DependentUpon>202010291610302_UpdatedBillLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301419438_deletedMyProperty.cs" />
+    <Compile Include="Migrations\202010301419438_deletedMyProperty.Designer.cs">
+      <DependentUpon>202010301419438_deletedMyProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010301422155_fixedhourinbill.cs" />
+    <Compile Include="Migrations\202010301422155_fixedhourinbill.Designer.cs">
+      <DependentUpon>202010301422155_fixedhourinbill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -135,6 +147,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010290000460_UpdatedProduct.resx">
       <DependentUpon>202010290000460_UpdatedProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010291610302_UpdatedBillLine.resx">
+      <DependentUpon>202010291610302_UpdatedBillLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301419438_deletedMyProperty.resx">
+      <DependentUpon>202010301419438_deletedMyProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010301422155_fixedhourinbill.resx">
+      <DependentUpon>202010301422155_fixedhourinbill.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

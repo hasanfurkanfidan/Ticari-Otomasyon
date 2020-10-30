@@ -1,0 +1,34 @@
+﻿@model Hff.MVC.Models.ViewModels.BillWithBillLineViewModel
+@{
+    ViewBag.Title = "Update";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Update</h2>
+
+<form class="form-group" method="post">
+    <label>Seri Numarası</label>
+    @Html.TextBoxFor(p => p.SerialNumber, new { @class = "form-control" })
+    <br />
+    <label>Sıra Numarası</label>
+    @Html.TextBoxFor(p => p.RowNumber, new { @class = "form-control" })
+    <br />
+    <label>Tarihi Giriniz</label>
+    @Html.TextBoxFor(p => p.Date, new { @type = "date",@class="form-control",@value=Model.Date })
+    <br />
+    <label>Saat</label>
+    @Html.TextBoxFor(P => P.Hour, new { @class = "form-control" })
+    <br />
+    <label>Vergi Dairesi</label>
+    @Html.TextBoxFor(p => p.TaxAdministration, new { @class = "form-control" })
+    <br />
+    <label>Teslim Eden</label>
+    @Html.TextBoxFor(p => p.Deliverer, new { @class = "form-control" })
+    <br />
+    <label>Teslim Alan</label>
+    @Html.TextBoxFor(p => p.Receiver, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(p=>p.BillId)
+    <button class="btn btn-primary">Fatura Güncelle</button>
+</form>
+

@@ -1,0 +1,32 @@
+﻿@model Hff.MVC.Models.ViewModels.BillAddViewModel
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Fatua Girişi Yap</h2>
+
+<form class="form-group" method="post">
+    <label>Seri Numarası</label>
+    @Html.TextBoxFor(p=>p.SerialNumber,new  {@class="form-control" })
+    <br />
+    <label>Sıra Numarası</label>
+    @Html.TextBoxFor(p=>p.RowNumber,new  {@class="form-control" })
+    <br />
+    <label>Tarihi Giriniz</label>
+    @Html.TextBoxFor(p=>p.Date,new  {@type="date" })
+    <br />
+    <label>Saat</label>
+    @Html.TextBoxFor(P=>P.Hour,new  {@class="form-control" })
+    <br />
+    <label>Vergi Dairesi</label>
+    @Html.TextBoxFor(p=>p.TaxAdministration,new  {@class="form-control" })
+    <br />
+    <label>Teslim Eden</label>
+    @Html.TextBoxFor(p=>p.Deliverer,new  {@class="form-control" })
+    <br />
+    <label>Teslim Alan</label>
+    @Html.TextBoxFor(p=>p.Receiver,new  {@class="form-control" })
+    <br />
+    <button class="btn btn-primary">Fatura Ekle</button>
+</form>

@@ -1,19 +1,12 @@
-﻿using DevFramework.Core.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Hff.Entities.Concrete
+namespace Hff.MVC.Models.ViewModels
 {
-   public class Bill:IEntity
+    public class BillAddViewModel
     {
-        //Fatura
-        [Key]
-        public int BillId { get; set; }
         public string SerialNumber { get; set; }
         public string RowNumber { get; set; }
         public DateTime Date { get; set; }
@@ -21,6 +14,5 @@ namespace Hff.Entities.Concrete
         public string Hour { get; set; }
         public string Deliverer { get; set; }
         public string Receiver { get; set; }
-        public ICollection<BillLine> BillLines { get; set; }
     }
 }

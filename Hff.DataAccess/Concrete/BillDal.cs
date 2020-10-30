@@ -9,7 +9,15 @@ using System.Threading.Tasks;
 
 namespace Hff.DataAccess.Concrete
 {
-   public class BillDal:EfEntityRepositoryBase<Bill,Context>,IBillDal
+    public class BillDal : EfEntityRepositoryBase<Bill, Context>, IBillDal
     {
+        public Bill GetWithBillLine(int id)
+        {
+            using (var context = new Context())
+            {
+                var bill = context.Set<Bill>().Include("BillLines").Where(p => p.BillId == id).FirstOrDefault();
+                return bill;
+            }
+        }
     }
 }

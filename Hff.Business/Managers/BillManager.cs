@@ -39,6 +39,11 @@ namespace Hff.Business.Managers
             return AutoMapperHelper.MapToSameTypeList(_billDal.GetList(filter));
         }
 
+        public Bill GetWithBillLine(int id)
+        {
+            return _billDal.GetWithBillLine(id);
+        }
+
         public Bill Update(Bill bill)
         {
             return AutoMapperHelper.MapToSameType(_billDal.Update(bill));
