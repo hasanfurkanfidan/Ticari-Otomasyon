@@ -164,6 +164,7 @@
     <Compile Include="Models\ViewModels\DepartmentViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeeAddViewModel.cs" />
     <Compile Include="Models\ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="Models\ViewModels\GalleryViewModel.cs" />
     <Compile Include="Models\ViewModels\ProductAddViewModel.cs" />
     <Compile Include="Models\ViewModels\SalesAddViewModel.cs" />
     <Compile Include="Models\ViewModels\SaleViewModel.cs" />
@@ -762,10 +763,10 @@
     <Content Include="thumber\scss\_site-base.scss" />
     <Content Include="thumber\scss\_site-blocks.scss" />
     <Content Include="thumber\scss\_site-navbar.scss" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
