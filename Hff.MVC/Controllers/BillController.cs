@@ -86,7 +86,7 @@ namespace Hff.MVC.Controllers
                 Quantity = model.Quantity,
                 
             });
-            return Redirect("/Bill/BillView" + model.BillId);
+            return Redirect("/Bill/BillView/" + model.BillId);
         }
     }
 }

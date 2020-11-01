@@ -31,7 +31,7 @@
             <td>@item.Category.CategoryName</td>
             <td>
                 <a href="/Product/Delete/@item.ProductId" class="btn btn-outline-danger">Sil</a>
-                <a href="/Product/Detail/@item.ProductId" class="btn btn-outline-success">Detay</a>
+                <a href="/Product/Update/@item.ProductId" class="btn btn-outline-success">Detay</a>
                 @if (item.Status == true)
                 {
                     <a href="/Product/ChangeStatus/@item.ProductId" class="btn btn-outline-info">Pasifleştir</a>

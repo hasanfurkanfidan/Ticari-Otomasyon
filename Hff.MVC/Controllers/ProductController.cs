@@ -78,7 +78,7 @@ namespace Hff.MVC.Controllers
             return Redirect("/Product/Index");
         }
         [HttpGet]
-        public ActionResult Detail(int id)
+        public ActionResult Update(int id)
         {
             var product = _productService.GetWithCategories().Where(p => p.ProductId == id).FirstOrDefault();
             var model = new ProductListViewModel();
@@ -107,7 +107,7 @@ namespace Hff.MVC.Controllers
             return View(model);
         }
         [HttpPost]
-        public ActionResult Detail(ProductListViewModel model)
+        public ActionResult Update(ProductListViewModel model)
         {
             var product = _productService.GetById(model.ProductId);
             product.Picture = model.Picture;
