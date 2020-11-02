@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace Hff.MVC.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
        private readonly ICategoryService _categoryService;

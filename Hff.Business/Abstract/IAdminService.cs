@@ -18,6 +18,8 @@ namespace Hff.Business.Abstract
 
         void Delete(int id);
 
+        Admin Get(Expression<Func<Admin, bool>> filter = null);
+
         Admin Update(Admin admin);
     }
 }

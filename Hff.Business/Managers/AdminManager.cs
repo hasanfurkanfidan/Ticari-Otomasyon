@@ -30,6 +30,11 @@ namespace Hff.Business.Managers
             _adminDal.Delete(deletedAdmin);
         }
 
+        public Admin Get(Expression<Func<Admin, bool>> filter = null)
+        {
+            return _adminDal.Get(filter);
+        }
+
         public Admin GetById(int id)
         {
             return AutoMapperHelper.MapToSameType(_adminDal.Get(p => p.AdminId == id));

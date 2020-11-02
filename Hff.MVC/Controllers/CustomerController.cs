@@ -11,6 +11,8 @@ using System.Web.Mvc;
 
 namespace Hff.MVC.Controllers
 {
+    [Authorize]
+
     public class CustomerController : Controller
     {
         private readonly ICustomerService _customerService;

@@ -8,6 +8,8 @@ using System.Web.Mvc;
 
 namespace Hff.MVC.Controllers
 {
+    [Authorize]
+
     public class GalleryController : Controller
     {
         private readonly IProductService _productService;

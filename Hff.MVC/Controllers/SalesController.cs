@@ -2,6 +2,7 @@
 using Hff.Entities.Concrete;
 using Hff.MVC.Models.ListViewModels;
 using Hff.MVC.Models.ViewModels;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ using System.Web.Mvc;
 
 namespace Hff.MVC.Controllers
 {
+    [Authorize]
+
     public class SalesController : Controller
     {
         private ISaleProcessService _saleProcessService;
@@ -24,11 +27,12 @@ namespace Hff.MVC.Controllers
             _employeeService = employeeService;
             _productService = productService;
         }
-        public ActionResult Index()
+        public ActionResult Index(int pageIndex=1)
         {
             var model = new SaleProcessListViewModel();
-            model.SalesProcesses = _saleProcessService.GetSaleProcessesWithEverything(null);
-            return View(model);
+            model.SalesProcesses = _saleProcessService.GetSaleProcessesWithEverything(null).ToList();
+            var response = model.SalesProcesses.ToPagedList(pageIndex, 10);
+            return View(response);
         }
         [HttpGet]
         public ActionResult ToSell()

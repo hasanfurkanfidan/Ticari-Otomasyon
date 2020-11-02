@@ -10,6 +10,8 @@ using System.Web.Mvc;
 
 namespace Hff.MVC.Controllers
 {
+    [Authorize]
+
     public class DepartmentController:Controller
     {
         private readonly IDepartmentService _departmentService;

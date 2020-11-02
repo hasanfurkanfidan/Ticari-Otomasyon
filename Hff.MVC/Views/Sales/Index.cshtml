@@ -1,9 +1,12 @@
-﻿@model Hff.MVC.Models.ListViewModels.SaleProcessListViewModel
+﻿
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Hff.Entities.Concrete.SalesProcess>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-
 <table class="table table-hover table-bordered">
     <tr>
         <th>Satış Numarası</th>
@@ -14,7 +17,7 @@
         <th>Toplam</th>
         <th>İşlemler</th>
     </tr>
-    @foreach (var item in Model.SalesProcesses)
+    @foreach (var item in Model)
     {
         <tr>
             <td>@item.SaleId</td>
@@ -24,11 +27,12 @@
             <td>@item.Price</td>
             <td>@item.Total</td>
             <td>
-            <a href="/Sales/Update/@item.SaleId" class="btn btn-success">Güncelle</a>
-            <a href="/Sales/Detail/@item.SaleId" class="btn btn-info">Detaylar</a>
+                <a href="/Sales/Update/@item.SaleId" class="btn btn-success">Güncelle</a>
+                <a href="/Sales/Detail/@item.SaleId" class="btn btn-info">Detaylar</a>
             </td>
         </tr>
     }
 </table>
 <br />
+@Html.PagedListPager((IPagedList)Model,pageIndex=>Url.Action("Index",new { pageIndex }))
 <a href="/Sales/ToSell" class="btn btn-outline-primary">Satış Yap</a> <a href="/Sales/PdfToIndex" class="btn btn-link">Yazdır</a>

@@ -10,6 +10,8 @@ using System.Web.Mvc;
 
 namespace Hff.MVC.Controllers
 {
+    [Authorize]
+
     public class BillController : Controller
     {
         // GET: Bill
